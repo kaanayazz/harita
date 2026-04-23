@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kaan Ayaz | Web Developer</title>
-  <meta name="description" content="Kaan Ayaz - Modern, hızlı ve satış odaklı web siteleri geliştiren freelance web developer." />
+  <meta name="description" content="Kaan Ayaz - Modern, hızlı ve müşteri odaklı web siteleri geliştiren freelance web developer." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -132,7 +132,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
       padding-block: 14px;
     }
 
@@ -244,7 +244,7 @@
     }
 
     .contact-toggle {
-      min-width: 175px;
+      min-width: 168px;
     }
 
     .contact-toggle .arrow {
@@ -310,7 +310,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
       gap: clamp(20px, 3vw, 32px);
       align-items: center;
       width: 100%;
@@ -359,15 +359,21 @@
     .hero p {
       color: var(--muted);
       font-size: clamp(1rem, 1.6vw, 1.08rem);
-      max-width: 640px;
+      max-width: 660px;
       margin-bottom: 28px;
     }
 
     .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+      max-width: 520px;
       margin-bottom: 28px;
+    }
+
+    .hero-buttons .btn {
+      width: 100%;
+      padding-inline: 16px;
     }
 
     .hero-features {
@@ -587,8 +593,62 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: 20px;
+    }
+
+    .about-profile {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .about-photo {
+      width: 150px;
+      height: 190px;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+    }
+
+    .about-meta {
+      display: grid;
+      gap: 10px;
+    }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e7e7ef;
+    }
+
+    .about-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+      flex-shrink: 0;
+    }
+
+    .about-text {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-text p {
+      color: #d7d7e3;
     }
 
     .about-card ul {
@@ -642,14 +702,17 @@
     .skills-wrap {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
     }
 
     .skill-tag {
-      padding: 12px 16px;
+      padding: 8px 12px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       color: #f3f3f8;
+      font-size: 0.78rem;
+      border-radius: 999px;
+      line-height: 1.2;
     }
 
     .contact-grid {
@@ -770,27 +833,51 @@
       }
 
       .nav {
-        flex-wrap: wrap;
-        gap: 14px;
+        flex-wrap: nowrap;
+        gap: 10px;
+        align-items: center;
       }
 
       .brand {
-        width: 100%;
+        min-width: 0;
+        flex: 1 1 auto;
       }
 
       .nav-actions {
-        width: 100%;
+        width: auto;
+        flex-shrink: 0;
       }
 
-      .contact-menu,
+      .contact-menu {
+        width: auto;
+      }
+
       .contact-toggle {
-        width: 100%;
+        min-width: auto;
+        width: auto;
+        padding: 11px 14px;
+        font-size: 0.82rem;
       }
 
       .contact-dropdown {
-        width: 100%;
-        right: auto;
-        left: 0;
+        width: 230px;
+        max-width: calc(100vw - 24px);
+        right: 0;
+        left: auto;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+      }
+
+      .logo strong {
+        font-size: 0.95rem;
+      }
+
+      .logo span {
+        font-size: 0.72rem;
       }
 
       .hero {
@@ -801,9 +888,16 @@
         letter-spacing: -1px;
       }
 
-      .hero-buttons,
-      .nav-actions {
-        flex-wrap: wrap;
+      .hero-buttons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 100%;
+        gap: 10px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        padding: 12px 10px;
+        font-size: 0.84rem;
       }
 
       .section-head {
@@ -819,14 +913,13 @@
         flex-direction: column;
       }
 
-      .btn,
-      .hero-buttons .btn {
-        width: 100%;
+      .about-profile {
+        grid-template-columns: 1fr;
       }
 
-      .brand-logo {
-        width: 46px;
-        height: 46px;
+      .about-photo {
+        width: 120px;
+        height: 150px;
       }
 
       .hero-identity {
@@ -916,22 +1009,24 @@
             geliştiriyorum.
           </h1>
 
-<p>
-Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri geliştirerek.
-  Hedefim seni internette daha güçlü göstermek, işini daha profesyonel sunmak ve potansiyel müşterilerin sana kolayca ulaşmasını sağlamaktır.
-</p>
+          <p>
+            Kişisel markalar, hizmet sunan işletmeler ve bireysel projeler için modern, hızlı ve mobil uyumlu web siteleri hazırlıyorum.
+            Hedefim sadece güzel görünen bir sayfa çıkarmak değil; seni internette daha profesyonel göstermek, güven oluşturmak ve müşterinin sana ulaşmasını kolaylaştırmak.
+          </p>
 
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Kendi Sitemi Kurmak İstiyorum</a>
             <a href="#about" class="btn btn-outline">Beni Tanı</a>
           </div>
+
+
         </div>
 
         <div class="hero-card reveal">
           <div class="hero-identity">
             <img
               src="https://pbs.twimg.com/profile_images/2047291812054712320/MwfN22dt_400x400.jpg"
-              alt="Kaan Ayaz Logo"
+              alt="Kaan Ayaz Profil Fotoğrafı"
             >
             <div>
               <strong>Kaan Ayaz</strong>
@@ -958,7 +1053,7 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
           <div class="stats-grid">
             <div class="stat-box">
               <h3>Modern</h3>
-              <p>Şık ve premium arayüzler</p>
+              <p>Şık ve güven veren arayüzler</p>
             </div>
             <div class="stat-box">
               <h3>Hızlı</h3>
@@ -966,11 +1061,11 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
             </div>
             <div class="stat-box">
               <h3>Mobil</h3>
-              <p>Tüm cihazlara uyumlu görünüm</p>
+              <p>Telefon dahil tüm cihazlara uyum</p>
             </div>
             <div class="stat-box">
-              <h3>Profesyonel</h3>
-              <p>Güven veren sunum dili</p>
+              <h3>İş Bitirici</h3>
+              <p>İletişim ve dönüşüm odaklı sonuç</p>
             </div>
           </div>
         </div>
@@ -991,19 +1086,19 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
           <div class="card reveal">
             <div class="service-icon">💻</div>
             <h3>Tek Sayfa Portföy Siteleri</h3>
-            <p>Kişisel marka, hizmet sunumu ve müşteri kazanımı için modern one-page web siteleri hazırlıyorum.</p>
+            <p>Kişisel marka, hizmet tanıtımı ve müşteri kazanımı için modern ve etkili tek sayfa web siteleri hazırlıyorum.</p>
           </div>
 
           <div class="card reveal">
             <div class="service-icon">🚀</div>
             <h3>Landing Page Tasarımı</h3>
-            <p>Ürün, hizmet veya kampanya için dikkat çeken, hızlı ve ikna edici satış sayfaları oluşturuyorum.</p>
+            <p>Ürün, hizmet veya kampanya için dikkat çeken, ikna gücü yüksek ve temiz satış sayfaları oluşturuyorum.</p>
           </div>
 
           <div class="card reveal">
             <div class="service-icon">📱</div>
             <h3>Responsive Geliştirme</h3>
-            <p>Sitenin telefon, tablet ve masaüstünde kusursuz görünmesi için tam uyumlu yapı kuruyorum.</p>
+            <p>Sitenin telefon, tablet ve masaüstünde düzgün görünmesi için tam uyumlu ve stabil bir yapı kuruyorum.</p>
           </div>
         </div>
       </div>
@@ -1021,17 +1116,51 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
 
         <div class="about-grid">
           <div class="card about-card reveal">
-            <h3>Kaan Ayaz</h3>
-            <p>
-              Modern arayüzler, güçlü renk kullanımı ve dikkat çekici kullanıcı deneyimi üzerine çalışan bir web developerım.
-              Amacım sadece bir site yapmak değil; seni, markanı veya hizmetini dijitalde güçlü gösterecek bir vitrin oluşturmaktır.
-            </p>
+            <div class="about-profile">
+              <img
+                class="about-photo"
+                src="https://pbs.twimg.com/media/HGmCg2DXwAAeQUo?format=jpg&name=large"
+                alt="Kaan Ayaz"
+              >
+              <div class="about-meta">
+                <span class="about-badge">Aktif olarak çalışıyorum</span>
+                <span class="about-badge">Anadolu Üniversitesi • Web Tasarımı ve Kodlama</span>
+                <span class="about-badge">İstanbul Avcılar doğumlu</span>
+                <span class="about-badge">Eskişehir’de lise eğitimimi tamamladım</span>
+              </div>
+            </div>
+
+            <div class="about-text">
+              <p>
+                Ben Kaan Ayaz. İstanbul Avcılar doğumluyum, lise eğitimimi Eskişehir’de tamamladım ve şu anda aktif olarak çalışırken
+                aynı zamanda Anadolu Üniversitesi’nde Web Tasarımı ve Kodlama bölümünde eğitimime devam ediyorum.
+              </p>
+
+              <p>
+                Küçük yaştan beri internet, tasarım ve dijital projelerle iç içeydim. Yani bu iş bende sonradan heves gibi başlamadı;
+                zaten yıllardır kurcalaya kurcalaya, deneye yanıla, projelerin içine girerek bir bilgi birikimi oluşturdum.
+                Okul kısmı sonradan geldi ama temeli dışarıda, gerçek uğraşın içinde oluştu diyebilirim.
+              </p>
+
+              <p>
+                Zamanla şunu net gördüm: sadece bir şeyler yapmak yetmiyor, işi daha profesyonel noktaya taşımak gerekiyor.
+                Bu yüzden eğitim tarafını da ciddiye alıp akademik olarak desteklemeye karar verdim.
+                Şu anda hem sahada çalışıyor olmam hem de eğitimime devam etmem, beni daha disiplinli, daha çözüm odaklı ve daha iş bitirici hale getiriyor.
+              </p>
+
+              <p>
+                Bugün geldiğim noktada sadece kendi projelerimle ilgilenen biri değilim; insanların, markaların ve işletmelerin ihtiyaçlarını anlayıp
+                onlara gerçekten işe yarayan, güven veren ve sonuç odaklı web çözümleri sunabiliyorum.
+                Kısacası iş lafta değil, ihtiyaç neyse ona göre sağlam iş çıkarmaya bakıyorum.
+              </p>
+            </div>
 
             <ul>
-              <li>Modern ve temiz tasarım anlayışı</li>
-              <li>Hızlı, sade ve etkili kullanıcı deneyimi</li>
-              <li>Tek sayfa sunumlarda güçlü içerik akışı</li>
-              <li>Müşteri odaklı ve profesyonel görünüm</li>
+              <li>Aktif olarak çalışıyor ve üretmeye devam ediyorum</li>
+              <li>Anadolu Üniversitesi’nde Web Tasarımı ve Kodlama okuyorum</li>
+              <li>Küçük yaştan beri dijital projelerle ilgileniyorum</li>
+              <li>Okul dışında da uzun süredir kendi bilgi birikimimi geliştiriyorum</li>
+              <li>Kendi projelerime devam ederken müşteri işleri de üretebiliyorum</li>
             </ul>
           </div>
 
@@ -1042,23 +1171,31 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
                 <div class="step-num">1</div>
                 <div>
                   <strong>Seni doğru yansıtan tasarım</strong>
-                  <p>Hazır, ruhsuz bir görünüm yerine markana veya karakterine uygun tasarım dili kurarım.</p>
+                  <p>Hazır ve ruhsuz bir görünüm yerine, işine uygun, güven veren ve seni daha profesyonel gösteren bir yapı kurarım.</p>
                 </div>
               </div>
 
               <div class="timeline-step">
                 <div class="step-num">2</div>
                 <div>
-                  <strong>Hız ve sadelik dengesi</strong>
-                  <p>Gösterişli ama karmaşık olmayan, ziyaretçiyi yormadan etkileyen bir yapı oluştururum.</p>
+                  <strong>Modern ama anlaşılır yapı</strong>
+                  <p>Gösterişli görünür ama kullanıcıyı yormaz. Hem şık olur hem de ziyaretçi ne yapacağını rahat anlar.</p>
                 </div>
               </div>
 
               <div class="timeline-step">
                 <div class="step-num">3</div>
                 <div>
-                  <strong>Gerçek etki hedefi</strong>
-                  <p>Hedef sadece siteyi yayına almak değil; seni profesyonel göstermek ve iletişim almanı kolaylaştırmaktır.</p>
+                  <strong>İletişime yönlendiren sonuç</strong>
+                  <p>Hedefim sadece siteyi yayına almak değil; müşterinin sana güvenmesini ve sana kolayca ulaşmasını sağlamaktır.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-num">4</div>
+                <div>
+                  <strong>Gelişime açık çalışma disiplini</strong>
+                  <p>Hem çalışan hem okuyan biri olarak işi ciddiye alırım. Detaya bakarım, eksik bırakmam, sağlam teslim etmeye odaklanırım.</p>
                 </div>
               </div>
             </div>
@@ -1081,19 +1218,19 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
           <div class="card reveal">
             <div class="service-icon">1</div>
             <h3>İhtiyaç Analizi</h3>
-            <p>Önce kim olduğunu, ne sunduğunu ve sitenin ne amaçla kullanılacağını netleştiriyorum.</p>
+            <p>Önce senin kim olduğunu, ne sunduğunu ve sitenin hangi amaçla kullanılacağını netleştiriyorum.</p>
           </div>
 
           <div class="card reveal">
             <div class="service-icon">2</div>
             <h3>Tasarım ve Yerleşim</h3>
-            <p>Bölüm sıralamasını, renkleri, kart yapısını ve kullanıcı akışını dikkatlice hazırlıyorum.</p>
+            <p>Başlıklar, içerik sırası, renk yapısı ve kullanıcı akışı dikkatli şekilde planlanıyor.</p>
           </div>
 
           <div class="card reveal">
             <div class="service-icon">3</div>
             <h3>Geliştirme ve Yayın</h3>
-            <p>Siteni kodluyor, mobil uyumunu tamamlıyor ve yayına hazır hale getiriyorum.</p>
+            <p>Mobil uyumlu şekilde kodlayıp yayına hazır hale getiriyorum; son aşamada her şey temiz ve çalışır olur.</p>
           </div>
         </div>
       </div>
@@ -1110,22 +1247,22 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
         </div>
 
         <div class="card reveal">
-<div class="skills-wrap">
-  <span class="skill-tag">HTML5</span>
-  <span class="skill-tag">CSS3</span>
-  <span class="skill-tag">JavaScript</span>
-  <span class="skill-tag">Responsive Web Design</span>
-  <span class="skill-tag">Mobil Uyumlu Arayüz</span>
-  <span class="skill-tag">Modern UI Tasarımı</span>
-  <span class="skill-tag">Landing Page Geliştirme</span>
-  <span class="skill-tag">Portföy Sitesi Tasarımı</span>
-  <span class="skill-tag">Kurumsal Web Arayüzleri</span>
-  <span class="skill-tag">Tek Sayfa Web Sitesi</span>
-  <span class="skill-tag">Kullanıcı Deneyimi Odaklı Tasarım</span>
-  <span class="skill-tag">Hız ve Performans Optimizasyonu</span>
-  <span class="skill-tag">Form Entegrasyonu</span>
-  <span class="skill-tag">İletişim ve Dönüşüm Odaklı Yapı</span>
-</div>
+          <div class="skills-wrap">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Mobil Uyumlu Arayüz</span>
+            <span class="skill-tag">Modern UI</span>
+            <span class="skill-tag">Landing Page</span>
+            <span class="skill-tag">Portföy Sitesi</span>
+            <span class="skill-tag">Kurumsal Arayüz</span>
+            <span class="skill-tag">Tek Sayfa Site</span>
+            <span class="skill-tag">Kullanıcı Deneyimi</span>
+            <span class="skill-tag">Performans Optimizasyonu</span>
+            <span class="skill-tag">Form Entegrasyonu</span>
+            <span class="skill-tag">Dönüşüm Odaklı Yapı</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1144,68 +1281,29 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
           <div class="card contact-box reveal">
             <h3>Bir proje mi düşünüyorsun?</h3>
             <p>
-              Portföy sitesi, kişisel sayfa, landing page veya modern bir web arayüzü için benimle hemen iletişime geçebilirsin.
+              Portföy sitesi, kişisel sayfa, tanıtım sayfası veya modern bir web arayüzü için benimle hemen iletişime geçebilirsin.
             </p>
 
             <div class="contact-links">
-              <a href="https://instagram.com/kullaniciadi" target="_blank">📸 Instagram DM ile yaz</a>
-              <a href="https://wa.me/905xxxxxxxxx" target="_blank">📱 WhatsApp üzerinden yaz</a>
-              <a href="tel:+905xxxxxxxxx">📞 Ara</a>
+              <a href="https://www.instagram.com/kaanayazstudio/" target="_blank">📸 Instagram DM ile yaz</a>
+              <a href="https://wa.me/905458104901" target="_blank">📱 WhatsApp üzerinden yaz</a>
+              <a href="tel:+905458104901">📞 Ara</a>
             </div>
           </div>
 
           <div class="card reveal">
-<form
-  action="https://formspree.io/f/mkokkwen"
-  method="POST"
-  class="contact-form"
->
-  <input
-    type="text"
-    name="name"
-    placeholder="Adınız Soyadınız"
-    required
-  />
+            <form action="https://formspree.io/f/mkokkwen" method="POST" class="contact-form">
+              <input type="text" name="name" placeholder="Adınız Soyadınız" required />
+              <input type="email" name="email" placeholder="E-posta adresiniz" required />
+              <input type="text" name="phone" placeholder="Telefon numaranız" />
+              <input type="text" name="project" placeholder="Proje türü (Portföy, Kurumsal, Landing Page...)" />
+              <textarea name="message" placeholder="Projenizi kısaca anlatın" required></textarea>
 
-  <input
-    type="email"
-    name="email"
-    placeholder="E-posta adresiniz"
-    required
-  />
+              <input type="hidden" name="_subject" value="Yeni teklif formu mesajı - kaanayaz.com.tr" />
+              <input type="hidden" name="_captcha" value="false" />
 
-  <input
-    type="text"
-    name="phone"
-    placeholder="Telefon numaranız"
-  />
-
-  <input
-    type="text"
-    name="project"
-    placeholder="Proje türü (Portföy, Kurumsal, Landing Page...)"
-  />
-
-  <textarea
-    name="message"
-    placeholder="Projenizi kısaca anlatın"
-    required
-  ></textarea>
-
-  <input
-    type="hidden"
-    name="_subject"
-    value="Yeni teklif formu mesajı - kaanayaz.com.tr"
-  />
-
-  <input
-    type="hidden"
-    name="_captcha"
-    value="false"
-  />
-
-  <button type="submit" class="btn btn-primary">Teklif Gönder</button>
-</form>
+              <button type="submit" class="btn btn-primary">Teklif Gönder</button>
+            </form>
           </div>
         </div>
       </div>
