@@ -923,7 +923,6 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
 
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Kendi Sitemi Kurmak İstiyorum</a>
-            <a href="#contact" class="btn btn-primary">Kurumsal Firma</a>
             <a href="#about" class="btn btn-outline">Beni Tanı</a>
           </div>
         </div>
@@ -1155,13 +1154,38 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
           </div>
 
           <div class="card reveal">
-            <form>
-              <input type="text" placeholder="Adınız Soyadınız" />
-              <input type="email" placeholder="E-posta adresiniz" />
-              <input type="text" placeholder="Proje türü (Portföy, Kurumsal, Landing Page...)" />
-              <textarea placeholder="Projenizi kısaca anlatın"></textarea>
-              <button type="submit" class="btn btn-primary">Teklif Gönder</button>
-            </form>
+<form
+  action="https://formspree.io/f/mkokkwen"
+  method="POST"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Adınız Soyadınız"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="E-posta adresiniz"
+    required
+  />
+
+  <input
+    type="text"
+    name="project"
+    placeholder="Proje türü (Portföy, Kurumsal, Landing Page...)"
+  />
+
+  <textarea
+    name="message"
+    placeholder="Projenizi kısaca anlatın"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn btn-primary">Teklif Gönder</button>
+</form>
           </div>
         </div>
       </div>
