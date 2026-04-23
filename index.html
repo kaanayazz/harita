@@ -220,6 +220,7 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
+      border: 1px solid rgba(255,255,255,0.9);
       box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
     }
 
@@ -326,7 +327,7 @@
       border: 1px solid rgba(255,255,255,0.1);
       color: #dedee7;
       font-size: 0.92rem;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       max-width: 100%;
       flex-wrap: wrap;
     }
@@ -339,6 +340,21 @@
       background: var(--success);
       box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
       flex-shrink: 0;
+    }
+
+    .hero-inline-image {
+      width: min(100%, 380px);
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      margin: 0 0 22px 0;
+    }
+
+    .hero-inline-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
     .hero h1 {
@@ -374,21 +390,6 @@
     .hero-buttons .btn {
       width: 100%;
       padding-inline: 16px;
-    }
-
-    .hero-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-features span {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #dadbe5;
-      font-size: 0.92rem;
     }
 
     .hero-card {
@@ -615,8 +616,10 @@
     }
 
     .about-meta {
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
+      align-content: flex-start;
     }
 
     .about-badge {
@@ -630,6 +633,7 @@
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       color: #e7e7ef;
+      white-space: nowrap;
     }
 
     .about-badge::before {
@@ -696,6 +700,8 @@
       place-items: center;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       font-weight: 800;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.9);
       flex-shrink: 0;
     }
 
@@ -884,6 +890,11 @@
         padding-top: 42px;
       }
 
+      .hero-inline-image {
+        width: min(100%, 260px);
+        margin-bottom: 18px;
+      }
+
       .hero h1 {
         letter-spacing: -1px;
       }
@@ -914,12 +925,28 @@
       }
 
       .about-profile {
-        grid-template-columns: 1fr;
+        grid-template-columns: 120px 1fr;
+        gap: 14px;
+        align-items: start;
       }
 
       .about-photo {
         width: 120px;
         height: 150px;
+      }
+
+      .about-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .about-badge {
+        font-size: 0.74rem;
+        padding: 7px 10px;
+        width: 100%;
+        white-space: normal;
       }
 
       .hero-identity {
@@ -1003,6 +1030,13 @@
         <div class="reveal">
           <div class="hero-badge">Şu anda yeni projelere açığım</div>
 
+          <div class="hero-inline-image">
+            <img
+              src="https://pbs.twimg.com/media/HGmHNAJWIAA6C0Y?format=jpg&name=medium"
+              alt="Kaan Ayaz görsel"
+            >
+          </div>
+
           <h1>
             Markanı öne çıkaran<br>
             <span class="gradient-text">modern ve güçlü web siteleri</span>
@@ -1015,11 +1049,9 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Kendi Sitemi Kurmak İstiyorum</a>
+            <a href="#contact" class="btn btn-primary">Teklif Al</a>
             <a href="#about" class="btn btn-outline">Beni Tanı</a>
           </div>
-
-
         </div>
 
         <div class="hero-card reveal">
@@ -1079,6 +1111,7 @@
             <h2>Neler Sunuyorum?</h2>
           </div>
           <p>
+            İhtiyaca göre sade, modern ve güven veren yapılar hazırlayarak seni dijitalde güçlü gösteren çözümler sunuyorum.
           </p>
         </div>
 
@@ -1111,6 +1144,7 @@
             <h2>Ben Kimim?</h2>
           </div>
           <p>
+            Kısaca sadece site yapan biri değilim; hem kendini geliştiren hem de işi ciddiye alan bir geliştiriciyim.
           </p>
         </div>
 
@@ -1124,7 +1158,8 @@
               >
               <div class="about-meta">
                 <span class="about-badge">Aktif olarak çalışıyorum</span>
-                <span class="about-badge">Anadolu Üniversitesi • Web Tasarımı ve Kodlama</span>
+                <span class="about-badge">Anadolu Üniversitesi</span>
+                <span class="about-badge">Web Tasarımı ve Kodlama</span>
                 <span class="about-badge">İstanbul Avcılar doğumlu</span>
                 <span class="about-badge">Eskişehir’de lise eğitimimi tamamladım</span>
               </div>
@@ -1211,6 +1246,7 @@
             <h2>Çalışma Sürecim</h2>
           </div>
           <p>
+            Düzenli, net ve güven veren bir süreçle ilerliyorum. Baştan sona ne yaptığım belli olur.
           </p>
         </div>
 
@@ -1243,6 +1279,7 @@
             <h2>Kullandığım Teknolojiler</h2>
           </div>
           <p>
+            Kullandığım araçlar ve yetkinlik alanlarım, hazırladığım sitelerin hem modern hem de kullanıcı dostu olmasını sağlar.
           </p>
         </div>
 
@@ -1274,6 +1311,7 @@
             <h2>İletişime Geç</h2>
           </div>
           <p>
+            Projeni kısaca bırak, geri dönüş sağlayayım. İstersen direkt DM ya da WhatsApp’tan da ulaşabilirsin.
           </p>
         </div>
 
