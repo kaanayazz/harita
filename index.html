@@ -1158,6 +1158,7 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
 <form
   action="https://formspree.io/f/mkokkwen"
   method="POST"
+  class="contact-form"
 >
   <input
     type="text"
@@ -1175,6 +1176,12 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
 
   <input
     type="text"
+    name="phone"
+    placeholder="Telefon numaranız"
+  />
+
+  <input
+    type="text"
     name="project"
     placeholder="Proje türü (Portföy, Kurumsal, Landing Page...)"
   />
@@ -1184,6 +1191,18 @@ Kişisel portföy, tanıtım sayfası ve hizmet sunumu için modern web siteleri
     placeholder="Projenizi kısaca anlatın"
     required
   ></textarea>
+
+  <input
+    type="hidden"
+    name="_subject"
+    value="Yeni teklif formu mesajı - kaanayaz.com.tr"
+  />
+
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false"
+  />
 
   <button type="submit" class="btn btn-primary">Teklif Gönder</button>
 </form>
